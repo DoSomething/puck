@@ -1,0 +1,25 @@
+{
+  "name": "puck",
+  "version": "1.0.0",
+  "description": "Collect analytics data over socket and let clients extract it ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "heroku local --procfile Procfile.dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "keypunch": "^1.0.5",
+    "monk": "^6.0.3",
+    "socket.io": "^2.0.3",
+    "sticky-session": "^1.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
