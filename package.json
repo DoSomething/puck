@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "heroku local --procfile Procfile.dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "MIT",
@@ -21,6 +21,9 @@
     "sticky-session": "^1.1.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "chai": "^4.1.2",
+    "mocha": "^3.5.2",
+    "nodemon": "^1.11.0",
+    "sinon": "^3.2.1"
   }
 }
