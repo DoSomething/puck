@@ -19,14 +19,14 @@ if (cluster.isMaster) {
   keypunch.addHeaderFunction(() => `[Worker #${cluster.worker.id}]`);
   keypunch.info('Starting up...');
 
-  const db = require('./lib/db');
+  const distribute = require('./lib/distributor');
 
   io.on('connection', (socket) => {
     keypunch.log(`Socket id ${socket.id} connected`);
 
     socket.on('analytics', (data) => {
       keypunch.log(`Socket ${socket.id} sent an event`);
-      db.write(data);
+      distribute(data);
     });
   });
 
