@@ -4,6 +4,7 @@ This file is a mess, project WIP
 
 http://amritb.github.io/socketio-client-tool
 
+```
 {
   event: {
     name: '', # Name of the event "signup"
@@ -30,3 +31,4 @@ http://amritb.github.io/socketio-client-tool
     }
   },
 }
+```
