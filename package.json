@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "heroku local --procfile Procfile.dev",
-    "test": "mocha"
+    "test": "mocha ./lib/*.test.js"
   },
   "author": "",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "chai": "^4.1.2",
     "mocha": "^3.5.2",
     "nodemon": "^1.11.0",
+    "proxyquire": "^1.8.0",
     "sinon": "^3.2.1"
   }
 }
