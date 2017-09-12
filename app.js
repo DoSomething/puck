@@ -4,6 +4,7 @@ const cluster = require('cluster');
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const stathat = require('./util/stathat');
 
 const totalCPUs = require('os').cpus().length;
 const port = process.env.PORT;
@@ -23,9 +24,11 @@ if (cluster.isMaster) {
 
   io.on('connection', (socket) => {
     keypunch.log(`Socket id ${socket.id} connected`);
+    stathat.count('client connection');
 
     socket.on('analytics', (data) => {
       keypunch.log(`Socket ${socket.id} sent an event`);
+      stathat.count('event delivered');
       distribute(typeof data === 'string' ? JSON.parse(data) : data);
     });
   });
