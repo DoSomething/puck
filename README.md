@@ -1,6 +1,6 @@
 # Puck
 
-Puck accepts a websocket connection from web apps using the Puck client. It validates events the events sent to it, applies necessary transformations, and forwards the data off to all of the places it needs to be tracked. Currently that is Keen.io, Blink, and a backup database.
+Puck is a service that accepts a websocket connection from web apps using the Puck client. It validates events the events sent to it, applies necessary transformations, and forwards the data off to all of the places it needs to be tracked. Currently that is Keen.io, Blink, and a backup database.
 
 ## Usage
 
