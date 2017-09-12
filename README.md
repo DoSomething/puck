@@ -1,8 +1,20 @@
 # Puck
 
-This file is a mess, project WIP
+Puck accepts a websocket connection from web apps using the Puck client. It validates events the events sent to it, applies necessary transformations, and forwards the data off to all of the places it needs to be tracked. Currently that is Keen.io, Blink, and a backup database.
 
-http://amritb.github.io/socketio-client-tool
+## Usage
+
+```
+$ cp .env.example .env
+$ npm install
+$ npm start
+```
+
+:warning: This requires `mongod` installed locally if you want to test the database backup.
+
+## Data model
+
+This is the data model that is expected by Puck.
 
 ```
 {
@@ -32,3 +44,10 @@ http://amritb.github.io/socketio-client-tool
   },
 }
 ```
+
+## Testing
+
+If you want to simulate a socket connection, this is a useful tool
+http://amritb.github.io/socketio-client-tool
+
+Otherwise use `npm run test` for automated testing.
