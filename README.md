@@ -4,6 +4,8 @@ Puck accepts a websocket connection from web apps using the Puck client. It vali
 
 ## Usage
 
+This app uses the Heroku runtime, get the Heroku toolbelt [here](https://devcenter.heroku.com/articles/heroku-cli#macos) if you don't already have it.
+
 ```
 $ cp .env.example .env
 $ npm install
