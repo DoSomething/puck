@@ -1,2 +1,2 @@
 web: nodemon app.js
-mongo: mongod
+mongo: mongod --port 65321

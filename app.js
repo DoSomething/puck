@@ -26,7 +26,7 @@ if (cluster.isMaster) {
 
     socket.on('analytics', (data) => {
       keypunch.log(`Socket ${socket.id} sent an event`);
-      distribute(data);
+      distribute(typeof data === 'string' ? JSON.parse(data) : data);
     });
   });
 
