@@ -33,9 +33,15 @@ This is the data model that is expected by Puck.
     northstarId: '', # If the user authenticates, add the Northstar id
   },
   page: {
-    path: '', # The current path of where this event was fired
-    referrer: '', # The previous page
-    landing_ts: '', # The timestamp of the first page land in this session
+    path: 'http://foo.bar/the/path?test=1',
+    parts: ['the', 'path'],
+    utm: ['1'],
+    referrer: {
+      url: 'http://hello.world/blah/blah?stuff=dsfdsf',
+      domain: 'http://hello.world',
+      utm: ['dsfdsf'],
+    },
+    landing_timestamp: 12324654765,
   },
   data: {
     anything: {
