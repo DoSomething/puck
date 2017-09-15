@@ -33,19 +33,29 @@ This is the data model that is expected by Puck.
     northstarId: '', # If the user authenticates, add the Northstar id
   },
   page: {
-    path: 'http://foo.bar/the/path?test=1',
+    href: 'http://foo.bar/the/path?test=1',
+    host: 'foo.bar',
+    path: '/the/path',
     parts: ['the', 'path'],
     utm: {
       test: '1',
     },
     referrer: {
-      url: 'http://hello.world/blah/blah?stuff=dsfdsf',
-      domain: 'http://hello.world',
+      href: 'http://hello.world/blah/blah?stuff=dsfdsf',
+      host: 'hello.world',
+      path: '/blah/blah',
       utm: {
         stuff: 'dsfdsf',
       },
     },
-    landing_timestamp: 12324654765,
+    landingTimestamp: 12324654765,
+    sessionId: 12324654765fdsfdsfdsfsdsd,
+  },
+  device: {
+    width: 123,
+    height: 456,
+    size: 'small',
+    browser: '',
   },
   data: {
     anything: {
