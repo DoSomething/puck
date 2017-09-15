@@ -36,15 +36,14 @@ This is the data model that is expected by Puck.
     href: 'http://foo.bar/the/path?test=1',
     host: 'foo.bar',
     path: '/the/path',
-    parts: ['the', 'path'],
-    utm: {
+    query: {
       test: '1',
     },
-    referrer: {
+    referrer: { # This persists for the entire session
       href: 'http://hello.world/blah/blah?stuff=dsfdsf',
       host: 'hello.world',
       path: '/blah/blah',
-      utm: {
+      query: {
         stuff: 'dsfdsf',
       },
     },
