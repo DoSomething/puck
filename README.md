@@ -35,11 +35,15 @@ This is the data model that is expected by Puck.
   page: {
     path: 'http://foo.bar/the/path?test=1',
     parts: ['the', 'path'],
-    utm: ['1'],
+    utm: {
+      test: '1',
+    },
     referrer: {
       url: 'http://hello.world/blah/blah?stuff=dsfdsf',
       domain: 'http://hello.world',
-      utm: ['dsfdsf'],
+      utm: {
+        stuff: 'dsfdsf',
+      },
     },
     landing_timestamp: 12324654765,
   },
