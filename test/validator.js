@@ -9,6 +9,7 @@ describe('Validates data', function() {
       meta: {},
       user: {},
       page: {},
+      browser: {},
       data: {},
     };
 
@@ -21,6 +22,7 @@ describe('Validates data', function() {
       meta: {},
       user: {},
       page: {},
+      browser: {},
     };
 
     assert.isFalse(isValid(invalidObject));
@@ -34,6 +36,7 @@ describe('Validates data', function() {
       meta: {},
       user: {},
       page: {},
+      browser: {},
       data: largeObject,
     };
 
@@ -46,6 +49,7 @@ describe('Validates data', function() {
       meta: {},
       user: {},
       page: {},
+      browser: {},
       data: {},
     };
 

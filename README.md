@@ -51,10 +51,7 @@ This is the data model that is expected by Puck.
     sessionId: 12324654765fdsfdsfdsfsdsd,
   },
   device: {
-    width: 123,
-    height: 456,
     size: 'small',
-    browser: '',
   },
   data: {
     anything: {
