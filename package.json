@@ -13,15 +13,18 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
     "keen-js": "^4.0.1",
     "keypunch": "^1.0.5",
     "monk": "^6.0.3",
     "object-sizeof": "^1.2.0",
+    "set-cookie": "0.0.4",
     "socket.io": "^2.0.3",
     "sticky-session": "^1.1.2",
     "superagent": "^3.6.3",
-    "tophat": "^1.0.3"
+    "tophat": "^1.0.3",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

@@ -3,10 +3,29 @@ const sticky = require('sticky-session');
 const stathat = require('./util/stathat');
 
 const app = require('express')();
+
+const uuid = require('uuid');
+const setCookie = require('set-cookie');
+const cookieParser = require('cookie-parser');
+app.use(cookieParser())
+const PUCK_COOKIE_ID = '_puck';
+
 app.all('/', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
+});
+
+app.get('/id', function(req, res) {
+  const puckCookie = req.cookies[PUCK_COOKIE_ID] || uuid.v4();
+
+  setCookie(PUCK_COOKIE_ID, puckCookie, {
+    domain: process.env.COOKIE_DOMAIN,
+    expires: new Date(3000, 1, 1), // I think this will be around long enough
+    res,
+  });
+
+  res.send('ok');
 });
 
 const http = require('http').Server(app);
