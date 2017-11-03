@@ -7,7 +7,7 @@ const app = require('express')();
 const uuid = require('uuid');
 const setCookie = require('set-cookie');
 const cookieParser = require('cookie-parser');
-app.use(cookieParser())
+app.use(cookieParser());
 const PUCK_COOKIE_ID = '_puck';
 
 app.all('/', function(req, res, next) {
