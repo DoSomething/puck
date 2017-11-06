@@ -39,10 +39,6 @@ io.on('connection', (socket) => {
   });
 });
 
-// Send a ping every 10 seconds to all clients,
-// prevents an HTTP timeout error on Heroku.
-setInterval(() => io.emit('ping', 'ping'), 10 * 1000);
-
 const port = process.env.PORT;
 http.listen(port, () => {
   keypunch.info(`Listening on port ${port}`);
