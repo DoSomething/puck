@@ -29,6 +29,7 @@ This is the data model that is expected by Puck.
     version: '', # If we make a breaking spec change, this number will increment
   },
   user: {
+    ip: '', # Ip address of the current user
     deviceId: '', # UUID that is assigned to the device and doesn't change
     northstarId: '', # If the user authenticates, add the Northstar id
   },
@@ -62,6 +63,12 @@ This is the data model that is expected by Puck.
   },
 }
 ```
+
+## Spec changelong
+
+### 1.1.0
+Added users `ip` to help with cross domain tracking.
+
 
 ## Testing
 
