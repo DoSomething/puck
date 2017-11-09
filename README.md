@@ -14,64 +14,6 @@ $ npm start
 
 :warning: This requires `mongod` installed locally if you want to test the database backup.
 
-## Data model
-
-This is the data model that is expected by Puck.
-
-```
-{
-  event: {
-    name: '', # Name of the event "signup"
-    source: '', # Where is this coming from? Phoenix Ashes, Next?
-  },
-  meta: {
-    timestamp: '', # Timestamp of when the event was created
-    version: '', # If we make a breaking spec change, this number will increment
-  },
-  user: {
-    ip: '', # Ip address of the current user
-    deviceId: '', # UUID that is assigned to the device and doesn't change
-    northstarId: '', # If the user authenticates, add the Northstar id
-  },
-  page: {
-    href: 'http://foo.bar/the/path?test=1',
-    host: 'foo.bar',
-    path: '/the/path',
-    query: {
-      test: '1',
-    },
-    referrer: { # This persists for the entire session
-      href: 'http://hello.world/blah/blah?stuff=dsfdsf',
-      host: 'hello.world',
-      path: '/blah/blah',
-      query: {
-        stuff: 'dsfdsf',
-      },
-    },
-    landingTimestamp: 12324654765,
-    sessionId: 12324654765fdsfdsfdsfsdsd,
-  },
-  device: {
-    size: 'small',
-  },
-  data: {
-    anything: {
-      we: {
-        want: '',
-      }
-    }
-  },
-}
-```
-
-## Spec changelong
-
-### 1.1.0
-Added users `ip` to help with cross domain tracking. Note: Due to the fact the IP is added server side and deployments happening asynchronous, there is going to be a small disrepency between events that have the IP and the 1.1.0 spec version.
-
-### 1.2.0
-Added a uuid to the `meta` property.
-
 ## Testing
 
 If you want to simulate a socket connection, this is a useful tool
