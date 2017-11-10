@@ -15,6 +15,8 @@ Data that explains what this event is and where it came from.
 ### meta
 Data that is useful for organizing in a warehouse or processing in an ingestion worker.
 
+**id**: A UUID generated for each event.
+
 **timestamp**: UNIX timestamp of when this event was fired.
 
 **version**: A version number that is maintained as core spec elements are changed. Core spec elements are considered anything that doesn't fall under the custom `data` property. Checkout the [change log](./changelog.md) for more information.
@@ -67,6 +69,7 @@ The data section of the event is a free-form structure that individual events ca
     "source": "example-source"
   },
   "meta": {
+    "id": "2ca513d0-a76e-4efc-b997-172572e1a731",
     "timestamp": "1510241944177",
     "version": "1.0.0"
   },
