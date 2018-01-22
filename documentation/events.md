@@ -8,12 +8,12 @@ By default, the Puck Client sends events related to the users session and page v
 
 **view**: This event is fired every time a user views a page.
 
-## Custom events
+# Custom events
 Applications using Puck can additionally send custom events. These are the following custom events in use, grouped by application source.
 
-### phoenix-next
+## phoenix-next
 
-#### clicked facebook share
+### clicked facebook share
 This event is fired anytime a user clicks the Facebook share button on Phoenix Next. Includes the following custom data,
 
 **quote**: Custom text injected into the Facebook share, likely null in most cases as it's not being used in the product currently.
@@ -38,13 +38,13 @@ Example data:
 }
 ```
 
-#### facebook share posted
+### facebook share posted
 This event is fired if a user successfully posts to Facebook after clicking the Facebook share button. It inherits the same data from the `clicked facebook share` event.
 
-#### facebook share cancelled
+### facebook share cancelled
 This event is fired if a user closes the Facebook share dialog after clicking the Facebook share button. It inherits the same data from the `clicked facebook share` event.
 
-#### open modal
+### open modal
 This event is fired whenever a user is presented with a modal.
 
 **modalType**: The type of the modal that was presented. Can be one of the following types,
@@ -59,10 +59,10 @@ Example data:
 }
 ```
 
-#### close modal
+### close modal
 This event is fired when a modal is closed by the user. Includes the same data as the `open modal` event.
 
-#### signup
+### signup
 This event is fired when a user clicks a Signup button. It does not verify the user is authenticated, sucessfuly authenticated if not already, and hit Rogue without error. Again, it only tracks the button was pressed. Any futher validation should be done within Quasar.
 
 **source**: The place on the page where the signup occurred. Possible values are ([Github search](https://github.com/DoSomething/phoenix-next/search?utf8=%E2%9C%93&q=SignupButtonFactory&type=)),
@@ -95,12 +95,12 @@ Example Data:
 }
 ```
 
-### northstar
+## northstar
 
-#### clicked facebook auth
+### clicked facebook auth
 This event is fired when a user clicks the Facebook authentication button.
 
-#### has validation errors
+### has validation errors
 This event is fired if a user attempts to login with Northstar but encounters a validation error when they submit a form.
 
 **invalidFields**: An array of Northstar fields the user had an error submitting (eg: `mobile`, `email`)
