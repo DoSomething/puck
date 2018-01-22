@@ -8,3 +8,7 @@ Central hub for documenting [Puck](https://github.com/DoSomething/puck) and the 
 [Puck events](./events.md)
 
 [Puck Sources](./sources.md)
+
+----
+
+![](./puck.png)
