@@ -1,5 +1,8 @@
 ## Spec changelog
 
+### 1.3.0
+Moving the setting of the uuid on the `meta` property from the client to the server.
+
 ### 1.2.0
 Added a uuid to the `meta` property.
 
