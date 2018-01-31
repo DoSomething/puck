@@ -2,6 +2,7 @@ const keypunch = require('keypunch');
 const sticky = require('sticky-session');
 const stathat = require('./util/stathat');
 const isValid = require('./lib/validator');
+const uuidv4 = require('uuid/v4');
 
 const app = require('express')();
 
@@ -34,6 +35,9 @@ io.on('connection', (socket) => {
 
     // Append socket ip address.
     data.user.ip = socket.request.connection.remoteAddress;
+
+    // Append random uuid.
+    data.meta.id = uuidv4();
 
     distribute(typeof data === 'string' ? JSON.parse(data) : data);
   });
