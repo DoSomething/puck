@@ -30,7 +30,9 @@ Data that is used for identifying this event with a specific user, whether authe
 - A shared computer (such as one at a public library, school) could have multiple Northstar id's associated with a single device id.
 - A user might access DoSomething.org from multiple devices (Phone, laptop), and have multiple device id's associated with their Northstar id.
 
-**northstarId**: The users northstar id, if they are currently authenticated.
+**northstarId**: The users northstar id, if they are currently authenticated (or if their ID is set through the URL query parameters).
+
+**isAuthenticated**: The users authentication status (boolean value).
 
 ### device
 Data about the device which created this event.
@@ -77,6 +79,7 @@ The data section of the event is a free-form structure that individual events ca
     "ip": "::ffff:10.10.100.100",
     "deviceId": "151024188248196633",
     "northstarId": "553eabfc469c64ed7d8b45e9"
+    "isAuthenticated": true,
   },
   "page": {
     "href": "http://dosomething.org/us/campaigns/example?test=1",
