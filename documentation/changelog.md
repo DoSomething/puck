@@ -1,5 +1,8 @@
 ## Spec changelog
 
+### 1.4.0
+Adding `isAuthenticated` to the `user` fields in event schema.
+
 ### 1.3.0
 Moving the setting of the uuid on the `meta` property from the client to the server.
 
