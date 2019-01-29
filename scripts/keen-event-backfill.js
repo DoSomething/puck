@@ -5,8 +5,8 @@ const KeenAnalysis = require('keen-analysis');
  * if not, insert them into the Puck database.
  */
 async function processEventsForPuck(events) {
-	for (let j = 0; j < events.length; j++) {
-	  const event = events[j];
+	for (let i = 0; i < events.length; i++) {
+	  const event = events[i];
 
 	  // Attempt to find the event in the Puck database.
 		const eventsFromPuck = await events.find({"meta.timestamp": event});
