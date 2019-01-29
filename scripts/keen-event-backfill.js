@@ -18,8 +18,12 @@ async function processEventsForPuck(events) {
     }
 
     // Otherwise, insert the event to the Puck database.
-    await events.insert(event);
-    console.log(`${event.meta.id} added to Puck`);
+    try {
+      await events.insert(event);
+      console.log(`${event.meta.id} added to Puck`);
+    } catch(err) {
+      console.log(err);
+    }
   }
 }
 
