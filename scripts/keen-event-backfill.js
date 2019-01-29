@@ -74,7 +74,7 @@ async function processKeenCollections(collections) {
 
 async function run(client) {
   // initialize a connection to the Puck database.
-  const db = require('monk')('MongoDB URL');
+  const db = require('monk')(process.env.MONGODB_URI);
   // Grab the events collection.
   const events = db.get('events');
 
@@ -99,8 +99,8 @@ async function run(client) {
 }
 
 const client = new KeenAnalysis({
-  projectId: 'Keen.io Project ID',
-  readKey: 'Keen.io Read Key',
+  projectId: process.env.KEEN_PROJECT_ID,
+  readKey: process.env.KEEN_READ_KEY,
 });
 
 run(client);
