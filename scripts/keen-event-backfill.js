@@ -9,7 +9,7 @@ async function processEventsForPuck(events) {
     const event = events[i];
 
     // Attempt to find the event in the Puck database.
-    const eventsFromPuck = await events.find({"meta.timestamp": event});
+    const eventsFromPuck = await events.find({"meta.timestamp": event.meta.timestamp});
 
     // If found in Puck -- great! Continue on to the next event.
     if (eventsFromPuck.length) {
