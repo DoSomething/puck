@@ -64,7 +64,7 @@ async function processKeenCollections(collections) {
 
       console.log(`Found ${results.length} ${collection} events.`);
 
-      await processEventsForPuck(results);
+      processEventsForPuck(results);
     } catch(err) {
       console.log(err);
     }
