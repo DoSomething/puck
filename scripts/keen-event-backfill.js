@@ -69,7 +69,7 @@ async function processKeenCollections(collections) {
       console.log(err);
     }
 
-    if (i % 5 === 0) {
+    if (i > 0 && i % 5 === 0) {
       // Sleep a bit every 5 calls so we don't get locked out of the Keen API for too many requests in a short timespan.
       await new Promise(resolve => setTimeout(resolve, 30000));
     }
