@@ -93,7 +93,7 @@ async function run(client) {
     const collections = response.map(collection => collection.name);
 
     // Process the collections.
-    await processCollections(collections);
+    await processKeenCollections(collections);
 
     // Close the connection to the Puck database.
     db.close();
