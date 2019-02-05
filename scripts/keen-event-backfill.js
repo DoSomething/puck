@@ -90,7 +90,7 @@ async function run(client) {
       .send()
 
     // Filter out the event names themselves from the response.
-    collections = response.map(collection => collection.name);
+    const collections = response.map(collection => collection.name);
 
     // Process the collections.
     await processCollections(collections);
