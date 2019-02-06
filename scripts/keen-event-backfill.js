@@ -49,7 +49,7 @@ async function processKeenCollections(collections) {
       const response = await client
         .query('extraction', {
           event_collection: collection,
-          timeframe: 'this_14_days',
+          timeframe: 'this_100_days',
           filters: [
             {
               property_name: 'meta.timestamp',
