@@ -42,7 +42,7 @@ async function processEventsForPuck(events) {
 async function processKeenCollections(collections) {
   for (let i = 0; i < collections.length; i++) {
     const collection = collections[i];
-    console.log(`Processing ${collection}`);
+    console.log(`Processing ${collection} (${i+1}/${collections.length})`);
 
     try {
       // Query for all the events of this collection filtered by timestamp.
