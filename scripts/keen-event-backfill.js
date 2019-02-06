@@ -1,3 +1,4 @@
+require('dotenv').config();
 const KeenAnalysis = require('keen-analysis');
 
 // Will reference the mongodb events collection.
