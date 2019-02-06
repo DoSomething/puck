@@ -1,16 +1,23 @@
 const KeenAnalysis = require('keen-analysis');
 
+// Will reference the mongodb events collection.
+let eventsTable = null;
+
 /* 
  * Iterate over list of Keen.io events, determine if they're already in Puck,
  * if not, insert them into the Puck database.
  */
 async function processEventsForPuck(events) {
+  if (!eventsTable) {
+    return;
+  }
+
   for (let i = 0; i < events.length; i++) {
     const event = events[i];
 
     // Attempt to find the event in the Puck database.
-    const eventsFromPuck = await events.find({"meta.id": event.meta.id});
 
+    const eventsFromPuck = await eventsTable.find({"meta.id": event.meta.id});
     // If found in Puck -- great! Continue on to the next event.
     if (eventsFromPuck.length) {
       console.log(`${event.meta.id} found in Puck`);
@@ -19,7 +26,7 @@ async function processEventsForPuck(events) {
 
     // Otherwise, insert the event to the Puck database.
     try {
-      await events.insert(event);
+      await eventsTable.insert(event);
       console.log(`${event.meta.id} added to Puck`);
     } catch(err) {
       console.log(err);
@@ -80,7 +87,7 @@ async function run(client) {
   // initialize a connection to the Puck database.
   const db = require('monk')(process.env.MONGODB_URI);
   // Grab the events collection.
-  const events = db.get('events');
+  eventsTable = db.get('events');
 
   try {
     // Grab all collections (event names) from Keen.io.
