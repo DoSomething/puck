@@ -1,3 +1,5 @@
+_We've deprecated this system and our usage of Puck within the DoSomething echosystem. We've moved onwards to [Snowplow Analytics](https://snowplowanalytics.com/)!_ 🏂
+
 # Puck
 
 Puck is a service that accepts a websocket connection from web apps using the Puck client. It validates events the events sent to it, applies necessary transformations, and forwards the data off to all of the places it needs to be tracked. Currently that is Blink and a mongodb database.
